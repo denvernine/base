@@ -1,0 +1,18 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Known text files
+*.css text
+*.java text
+*.js text
+*.json text
+*.md text
+*.php text
+*.sh text
+*.ts text
+*.txt text
+*.yaml text
+*.yml text
+
+# Known binary files
+*.jar binary
