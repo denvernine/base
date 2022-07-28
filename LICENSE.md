@@ -22,10 +22,10 @@
 
 ## CC BY-SA 4.0
 
-[original](https://creativecommons.org/licenses/by-sa/4.0/legalcode), [choosealicense.com](https://choosealicense.com/licenses/cc-by-sa-4.0/)
+[original](https://creativecommons.org/2014/01/07/plaintext-versions-of-creative-commons-4-0-licenses/), [choosealicense.com](https://choosealicense.com/licenses/cc-by-sa-4.0/)
 
 ```txt
-Copyright (C) denvernine <37843385+denvernine@users.noreply.github.com>
+Copyright (c) denvernine <37843385+denvernine@users.noreply.github.com>
 
 This work is licensed under a
 Creative Commons Attribution-ShareAlike 4.0 International License.
