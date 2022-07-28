@@ -1,10 +1,8 @@
 # Licenses
 
-- `src/*/**`: [WTFPL](http://www.wtfpl.net/about/)
-- `docs/*/**`: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/legalcode)
-- `README.md`: CC BY-ND 4.0
-
 ## WTFPL
+
+[original](http://www.wtfpl.net/about/), [choosealicense.com](https://choosealicense.com/licenses/wtfpl/)
 
 ```txt
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
@@ -22,14 +20,16 @@
   0. You just DO WHAT THE FUCK YOU WANT TO.
 ```
 
-## CC BY-ND 4.0
+## CC BY-SA 4.0
+
+[original](https://creativecommons.org/licenses/by-sa/4.0/legalcode), [choosealicense.com](https://choosealicense.com/licenses/cc-by-sa-4.0/)
 
 ```txt
 Copyright (C) denvernine <37843385+denvernine@users.noreply.github.com>
 
-this project is licensed under a
-Creative Commons Attribution-NoDerivatives 4.0 International License.
+This work is licensed under a
+Creative Commons Attribution-ShareAlike 4.0 International License.
 
 You should have received a copy of the license along with this
-work. If not, see <http://creativecommons.org/licenses/by-nd/4.0/>.
+work. If not, see <https://creativecommons.org/licenses/by-sa/4.0/>.
 ```
