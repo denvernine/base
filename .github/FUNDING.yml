@@ -1,0 +1,15 @@
+community_bridge: PROJECT-NAME
+github: [denvernine, USERNAME, USERNAME, USERNAME]
+issuehunt: USERNAME
+ko_fi: USERNAME
+liberapay: USERNAME
+open_collective: USERNAME
+otechie: USERNAME
+patreon: USERNAME
+tidelift: npm/PACKAGE-NAME # JavaScript
+tidelift: pypi/PACKAGE-NAME # Python
+tidelift: rubygems/PACKAGE-NAME # Ruby
+tidelift: maven/PACKAGE-NAME # Java
+tidelift: packagist/PACKAGE-NAME # PHP
+tidelift: nuget/PACKAGE-NAME # C#
+custom: [LINK1, LINK2, LINK3, LINK4]
