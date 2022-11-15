@@ -6,5 +6,10 @@ liberapay: USERNAME
 open_collective: USERNAME
 otechie: USERNAME
 patreon: USERNAME
-tidelift: PLATFORM-NAME/PACKAGE-NAME
+tidelift: npm/PACKAGE-NAME # JavaScript
+tidelift: pypi/PACKAGE-NAME # Python
+tidelift: rubygems/PACKAGE-NAME # Ruby
+tidelift: maven/PACKAGE-NAME # Java
+tidelift: packagist/PACKAGE-NAME # PHP
+tidelift: nuget/PACKAGE-NAME # C#
 custom: [LINK1, LINK2, LINK3, LINK4]
