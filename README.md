@@ -5,8 +5,7 @@ template repository
 ## Licenses
 
 - `src/*/**`: WTFPL
-- `docs/*/**`: CC BY-SA 4.0
-- `README.md (this file)`: CC BY-SA 4.0
+- other all files: CC BY-SA 4.0
 
 more information, view [Licenses for this project](./LICENSE.md).
 
