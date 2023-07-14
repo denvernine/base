@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: .docker/app
+      dockerfile: Dockerfile
+      args:
+        UNAME: ${USER:-dev}
+        UID: ${UID:-1001}
+        GID: ${UID:-1001}
+    networks:
+      base: null
+    dns:
+    - 1.1.1.2
+    - 2606:4700:4700::1112
+    - 8.8.8.8
+    - 2001:4860:4860:0:0:0:0:8888
+    - 1.0.0.2
+    - 2606:4700:4700::1002
+    - 8.8.4.4
+    - 2001:4860:4860:0:0:0:0:8844
+    ports:
+    - protocol: tcp
+      mode: ingress
+      target: 80
+    volumes:
+    - type: bind
+      source: ./src
+      target: /home/${USER}/.local/app
+      bind:
+        create_host_path: false
+    working_dir: /home/${USER}/.local/app
+    tty: true
+    stdin_open: true
+
+networks:
+  base:
+    driver: bridge
