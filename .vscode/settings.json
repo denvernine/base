@@ -1,0 +1,4 @@
+// ref: .devcontaner/devcontainer.json
+{
+  "editor.rulers": [80, 120],
+}

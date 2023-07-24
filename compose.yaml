@@ -1,0 +1,61 @@
+services:
+  app:
+    build:
+      context: .docker/app
+      args:
+        UNAME: ${COMPOSE_PROJECT_NAME}
+        UID: ${UID}
+        GID: ${GID}
+    user: ${USER_UID}:${USER_GID}
+    environment:
+      APACHE_RUN_USER: ${COMPOSE_PROJECT_NAME}
+      APACHE_RUN_GROUP: ${COMPOSE_PROJECT_NAME}
+      APACHE_PID_FILE: /var/run/apache2/apache2.pid
+      APACHE_RUN_DIR: /var/run/apache2
+      APACHE_LOG_DIR: /var/log/apache2
+      APACHE_LOCK_DIR: /var/lock/apache2
+    volumes:
+    - type: bind
+      source: .
+      target: /project
+      bind:
+        create_host_path: false
+    working_dir: /project
+    ports:
+    - protocol: tcp
+      mode: ingress
+      target: 8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+
+  mysql:
+    image: mysql/mysql-server:8.0
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+    - type: volume
+      source: mysql
+      target: /var/lib/mysql
+      volume: {}
+    healthcheck:
+      test:
+      - CMD
+      - mysqladmin
+      - --user=root
+      - --password=${MYSQL_ROOT_PASSWORD}
+      - ping
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  mysql:
+    driver: local

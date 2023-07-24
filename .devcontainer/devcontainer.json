@@ -1,0 +1,39 @@
+{
+  "name": "php/laravel",
+  "remoteUser": "dev",
+
+  "features": {
+    "git": "latest",
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "42Crunch.vscode-openapi",
+        "MehediDracula.php-constructor",
+        "MehediDracula.php-namespace-resolver",
+        "bmewburn.vscode-intelephense-client",
+        "georgykurian.laravel-ide-helper",
+        "neilbrayfield.php-docblocker",
+        "onecentlin.laravel-extension-pack",
+      ],
+      // ref: .vscode/settings.json
+      "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "namespaceResolver.autoSort": true,
+        "namespaceResolver.sortAlphabetically": true,
+        "namespaceResolver.sortNatural": false,
+      },
+    },
+  },
+
+  "dockerComposeFile": [
+    "../compose.yaml",
+  ],
+  "service": "app",
+  "workspaceFolder": "/project",
+  "shutdownAction": "stopCompose",
+
+  "initializeCommand": "[ -L $(pwd)/.docker/app/tmp ] || ln -snf /tmp $(pwd)/.docker/app/tmp",
+  "postStartCommand": "[ -f /project/src/.env ] || cp /project/src/.env.example /project/src/.env",
+  "postAttachCommand": "cd /project/src && ([ -L .docker/app/tmp ] && unlink .docker/app/tmp) && ([ -d vendor ] || composer install) && ([ -L public/storage ] || php artisan storage:link) && php artisan key:generate",
+}
